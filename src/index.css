@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  body {
+    overflow-x: hidden;
+  }
+  /*Hamburger*/
+  .button-one {
+    background: transparent;
+    border-radius: 1rem;
+  }
+
+  .button-one .line {
+    transition: y 225ms ease-in 225ms, rotate 225ms ease-in, opacity 0ms 225ms;
+    transform-origin: center;
+  }
+
+  .button-one[aria-expanded="true"] .line {
+    transition: y 225ms ease-in, rotate 225ms ease-in 225ms, opacity 0ms 225ms;
+  }
+
+  .button-one[aria-expanded="true"] :is(.line-top, .line-bottom) {
+    y: 45;
+  }
+
+  .button-one[aria-expanded="true"] .line-top {
+    rotate: 45deg;
+  }
+
+  .button-one[aria-expanded="true"] .line-bottom {
+    rotate: -45deg;
+  }
+
+  .button-one[aria-expanded="true"] .line-middle {
+    opacity: 0;
+  }
+
+  /*Title*/
+}
